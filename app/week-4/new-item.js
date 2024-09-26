@@ -18,14 +18,14 @@ export default function Counter() {
                 <button 
                     onClick={increment}
                     disabled={count === 20}
-                    className=" bg-yellow-500 text-black mr-10 mb-4 w-10 rounded-md"
+                    className=" bg-yellow-500 text-black mr-10 mb-4 w-10 rounded-md hover:bg-red-700"
                     >+
                 </button>
 
                 <button 
                     onClick={decrement}
                     disabled={count === 1}
-                    className=" bg-yellow-500 text-black ml-10 mb-4 w-10 rounded-md"
+                    className=" bg-yellow-500 text-black ml-10 mb-4 w-10 rounded-md hover:bg-red-700"
                     >-
                 </button>
             </div>
