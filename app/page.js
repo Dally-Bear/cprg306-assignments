@@ -23,6 +23,9 @@ export default function Page() {
               <li className="p-5">
                 <Link href="/week-6">Week 6 Assignment</Link>
               </li> 
+              <li className="p-5">
+                <Link href="/week-7">Week 7 Assignment</Link>
+              </li> 
                
             </ul>
         </div>
