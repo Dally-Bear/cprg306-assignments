@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from 'react';  
 
 export default function Form({ onAddItem }) {
@@ -19,15 +18,18 @@ export default function Form({ onAddItem }) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(name);
-        onAddItem({ name, count, category });
+        if (name.trim() === "" || count <= 0) {
+            alert("Fields cannot be empty");
+            return;
+        }
+        onAddItem({ name, quantity: count, category });
         setName("");
         setCount(0);     
     };
 
     return (
-        <form className="flex flex-col justify-center text-center w-60" onSubmit={handleSubmit}>
-            <label className="text-center text-yellow-500" htmlFor="name">Name</label>
+        <form className="flex flex-col justify-center text-center" onSubmit={handleSubmit}>
+            <label className="text-center text-blue-600" htmlFor="name">Name</label>
             <input 
                 id="name"
                 type="text"
@@ -37,12 +39,12 @@ export default function Form({ onAddItem }) {
             />
             
             <div className="flex flex-row justify-between bg-black rounded-2xl w-72 p-2 m-3">
-                <p className="text bg-yellow-500 w-28 h-5 rounded-md">{count}</p>
+                <p className="text bg-blue-300 w-28 h-5 rounded-md">{count}</p>
                 <div>
                     <button 
                         onClick={increment}
                         disabled={count === 20}
-                        className="bg-yellow-500 text-black h-5 mb-4 w-14 ml-2 rounded-md hover:bg-red-700"
+                        className="bg-blue-300 text-black h-5 mb-4 w-14 ml-2 rounded-md hover:bg-red-700"
                     >
                         +
                     </button>
@@ -50,7 +52,7 @@ export default function Form({ onAddItem }) {
                     <button 
                         onClick={decrement}
                         disabled={count === 0}
-                        className="bg-yellow-500 text-black ml-4 mb-4 w-14 h-5 rounded-md hover:bg-red-700"
+                        className="bg-blue-300 text-black ml-4 mb-4 w-14 h-5 rounded-md hover:bg-red-700"
                     >
                         -
                     </button>
