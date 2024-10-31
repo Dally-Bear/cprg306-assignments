@@ -1,5 +1,4 @@
 //Building an item component which accepts name, quantity, and category as props and displays them in a list item element.
-//Style using Tailwind CSS
 export default function Item({name, quantity, category}) {
     return (
         <div> 

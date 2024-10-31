@@ -1,4 +1,4 @@
-import Item from "./item";
+import Item from "./item.js";
 
 export default function ItemList() {
     const item1 = {
